@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                // Pull the latest code from GitHub
-                git url: 'https://github.com/yourusername/sudoku-solver.git', branch: 'main'
-            }
-        }
         
         stage('Build') {
             steps {
