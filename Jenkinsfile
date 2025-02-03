@@ -15,15 +15,14 @@ pipeline {
         }
         stage('Build') {
             steps {
-                // Clean and package your project using Maven
-                sh 'mvn clean package'
+                sh 'javac -d out src/SudokuSolver.java'
             }
         }
         stage('Test') {
             steps {
                 // Run the built jar using the sample_input file.
                 // Adjust the jar file name if necessary.
-                sh 'sudo java -jar target/sudokuSolver-1.0-SNAPSHOT.jar < sample_input'
+                sh 'sudo java -cp out SudokuSolver < sample_input'
 
             }
         }
