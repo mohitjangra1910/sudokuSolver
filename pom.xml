@@ -42,7 +42,7 @@
           <archive>
             <manifest>
               <!-- Replace with your project's main class -->
-              <mainClass>com.example.Main</mainClass>
+              <mainClass>SudokuSolver</mainClass>
             </manifest>
           </archive>
         </configuration>
