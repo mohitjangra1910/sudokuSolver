@@ -23,7 +23,8 @@ pipeline {
             steps {
                 // Run the built jar using the sample_input file.
                 // Adjust the jar file name if necessary.
-                sh 'sudo java -jar target/sudokuSolver.jar < sample_input'
+                sh 'sudo java -jar target/sudokuSolver-1.0-SNAPSHOT.jar < sample_input'
+
             }
         }
     }
