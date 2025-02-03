@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'javac -d out src/SudokuSolver.java'
+                sh 'javac -d out SudokuSolver.java'
             }
         }
         stage('Test') {
