@@ -1,3 +1,0 @@
-+ sudo java -jar target/sudokuSolver-1.0-SNAPSHOT.jar
-Error: Could not find or load main class com.example.Main
-Caused by: java.lang.ClassNotFoundException: com.example.Main
