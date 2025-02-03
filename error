@@ -1,0 +1,115 @@
+Started by user Mohit Jangra
+
+Lightweight checkout support not available, falling back to full checkout.
+Checking out git https://github.com/mohitjangra1910/sudokuSolver.git into /var/lib/jenkins/workspace/sudoku@script/6faf12822faa37a94f23bca693f8054820e4e8b5668b83f97179450982f3b957 to read Jenkinsfile
+The recommended git tool is: NONE
+using credential 9210600d-824a-46eb-84b5-73f082f5407f
+ > /usr/bin/git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/sudoku@script/6faf12822faa37a94f23bca693f8054820e4e8b5668b83f97179450982f3b957/.git # timeout=10
+Fetching changes from the remote Git repository
+ > /usr/bin/git config remote.origin.url https://github.com/mohitjangra1910/sudokuSolver.git # timeout=10
+Fetching upstream changes from https://github.com/mohitjangra1910/sudokuSolver.git
+ > /usr/bin/git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+using GIT_ASKPASS to set credentials git passwd
+ > /usr/bin/git fetch --tags --force --progress -- https://github.com/mohitjangra1910/sudokuSolver.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+Seen branch in repository origin/main
+Seen 1 remote branch
+ > /usr/bin/git show-ref --tags -d # timeout=10
+Checking out Revision 026aa579c49b9b253a9dd35576bceed80994f44d (origin/main)
+ > /usr/bin/git config core.sparsecheckout # timeout=10
+ > /usr/bin/git checkout -f 026aa579c49b9b253a9dd35576bceed80994f44d # timeout=10
+Commit message: "Update Jenkinsfile"
+First time build. Skipping changelog.
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins
+ in /var/lib/jenkins/workspace/sudoku
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+The recommended git tool is: NONE
+using credential 9210600d-824a-46eb-84b5-73f082f5407f
+ > /usr/bin/git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/sudoku/.git # timeout=10
+Fetching changes from the remote Git repository
+ > /usr/bin/git config remote.origin.url https://github.com/mohitjangra1910/sudokuSolver.git # timeout=10
+Fetching upstream changes from https://github.com/mohitjangra1910/sudokuSolver.git
+ > /usr/bin/git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+using GIT_ASKPASS to set credentials git passwd
+ > /usr/bin/git fetch --tags --force --progress -- https://github.com/mohitjangra1910/sudokuSolver.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+Seen branch in repository origin/main
+Seen 1 remote branch
+ > /usr/bin/git show-ref --tags -d # timeout=10
+Checking out Revision 026aa579c49b9b253a9dd35576bceed80994f44d (origin/main)
+ > /usr/bin/git config core.sparsecheckout # timeout=10
+ > /usr/bin/git checkout -f 026aa579c49b9b253a9dd35576bceed80994f44d # timeout=10
+Commit message: "Update Jenkinsfile"
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] checkout
+The recommended git tool is: NONE
+using credential 9210600d-824a-46eb-84b5-73f082f5407f
+ > /usr/bin/git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/sudoku/.git # timeout=10
+Fetching changes from the remote Git repository
+ > /usr/bin/git config remote.origin.url https://github.com/mohitjangra1910/sudokuSolver.git # timeout=10
+Fetching upstream changes from https://github.com/mohitjangra1910/sudokuSolver.git
+ > /usr/bin/git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+using GIT_ASKPASS to set credentials git passwd
+ > /usr/bin/git fetch --tags --force --progress -- https://github.com/mohitjangra1910/sudokuSolver.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+Seen branch in repository origin/main
+Seen 1 remote branch
+ > /usr/bin/git show-ref --tags -d # timeout=10
+Checking out Revision 026aa579c49b9b253a9dd35576bceed80994f44d (origin/main)
+ > /usr/bin/git config core.sparsecheckout # timeout=10
+ > /usr/bin/git checkout -f 026aa579c49b9b253a9dd35576bceed80994f44d # timeout=10
+Commit message: "Update Jenkinsfile"
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] sh
++ mvn clean package
+
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  0.325 s
+[[1;34mINFO[m] Finished at: 2025-02-03T14:51:27+05:30
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] The goal you specified requires a project to execute but there is no POM in this directory (/var/lib/jenkins/workspace/sudoku). Please verify you invoked Maven from the correct directory. -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MissingProjectException
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+Stage "Test" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] echo
+Build or test failed.
+[Pipeline] }
+[Pipeline] // stage
+
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+ERROR: script returned exit code 1
+Finished: FAILURE
+
