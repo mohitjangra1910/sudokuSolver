@@ -1,38 +1,39 @@
 pipeline {
     agent any
 
+    // Trigger the build when a push event occurs
+    triggers {
+        githubPush()
+    }
+
     stages {
-        
+        stage('Checkout') {
+            steps {
+                // Checkout the code from the repository
+                checkout scm
+            }
+        }
         stage('Build') {
             steps {
-                // Clean and compile the project using Maven
-                sh 'mvn clean compile'
+                // Clean and package your project using Maven
+                sh 'mvn clean package'
             }
         }
-        
         stage('Test') {
             steps {
-                // Run the unit tests; if you have JUnit tests, this will run them
-                sh 'mvn test'
-            }
-        }
-        
-        stage('Run (Simulated Input)') {
-            steps {
-                // Since your program expects user input, simulate it by piping input.
-                // Replace "sample_input" with the actual input your program expects.
-                // Replace 'your.package.Main' with your actual main class path.
-                sh 'echo "sample_input" | java -cp target/classes SudokuSolver'
+                // Run the built jar using the sample_input file.
+                // Adjust the jar file name if necessary.
+                sh 'java -jar target/sudokuSolver.jar < sample_input'
             }
         }
     }
-    
+
     post {
         success {
-            echo 'Build, Test, and Run stages completed successfully!'
+            echo 'Build and test succeeded!'
         }
         failure {
-            echo 'One or more stages failed.'
+            echo 'Build or test failed.'
         }
     }
 }
